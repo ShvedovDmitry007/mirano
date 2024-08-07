@@ -1,0 +1,156 @@
+@use "../veribles" as *;
+@use "../media" as *;
+
+.filter {
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  &__group { 
+    display: flex;
+    flex-wrap: wrap;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    gap: 12px;
+
+    &_choises {
+      gap: 64px;
+
+      @include mobile {
+        gap: 40px;
+      }
+    }
+  }
+
+  &__radio {
+    appearance: none;
+    position: absolute;
+  }
+
+  &__label {
+    padding: 16px;
+    padding-left: 60px;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 300px;
+    background-color: $white;
+    color: $dark;
+    background-position: center left 16px;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    @include mobile {
+      background-position: center left 12px;
+      background-size: 24px;
+      padding: 10px 12px 10px 40px;
+      min-height: 40px;
+    }
+
+    &_flower {
+      background-image: url('/img/flowers.png');
+    }
+    &_toy {
+      background-image: url('/img/bear.png');
+    }
+    &_postcard {
+      background-image: url('/img/postcard.png');
+    }
+
+    &:hover {
+      background-color: $orange;
+      color: $white;
+    }
+  }
+
+  &__radio:focus-visible + &__label {
+    outline: 2px solid $orange;
+    outline-offset: 5px;
+  }
+
+  &__radio:checked + &__label {
+    background-color: $light-orange;
+    color: $white;
+  }
+
+  &__choices {
+    position: relative;
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: url('/img/arrow.svg') no-repeat center/contain;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+    border: 0;
+  }
+
+  &__choices-box {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 24px;
+    border-radius: 12px;
+    background-color: $white;
+
+    &_type {
+      padding: 16px
+    }
+  }
+
+  &__input-price {
+    padding: 8px 16px;
+    width: 110px;
+    height: 40px;
+    border: none;
+    border-radius: 32px;
+    background-color: $bg;
+
+    @include mobile {
+      width: 80px;
+    }
+  }
+
+  &__type-item {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__type-button {
+    white-space: nowrap;
+
+    &:hover {
+      color: $light-orange;
+    }
+
+    &_active {
+      color: $orange;
+    }
+  }
+}
+
+

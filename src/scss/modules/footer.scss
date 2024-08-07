@@ -1,0 +1,74 @@
+@use "../veribles" as *;
+@use "../media" as *;
+
+.footer {
+  padding: 80px 0;
+  background: $footer url("/img/figure.svg") no-repeat;
+  background-position: bottom center;
+  background-size: 1640px 408px;
+
+  @include laptop {
+    background-size: 1287px 408px;
+  }
+
+  @include tablet {
+    background-size: 965px 336px;
+  }
+
+  @include mobile {
+    background-size: 709px 267px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+
+    @include tablet {
+      gap: 40px;
+    }
+  }
+
+  &__logo {
+    width: 200px;
+  }
+
+  &__address {
+    font-style: normal;
+  }
+
+  &__mail {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  &__social-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  &__social {
+  }
+
+  &__developers-title {
+    margin-bottom: 3px;
+  }
+
+  &__developers-list {
+  }
+
+  &__developers-item {
+    margin-bottom: 3px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__copyright {
+    text-transform: uppercase;
+  }
+}
